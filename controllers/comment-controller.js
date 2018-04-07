@@ -52,5 +52,37 @@ module.exports = function(app) {
       });
   });
 
+  app.get("/comments/delete/:artId/:commentId", function(req, res){
+    modelComment.remove({'_id': req.params.commentId}, function(err, result){
+        if(err)
+          console.log(err);
+        else{
+          console.log("Comment id: " + req.params.commentId + " removed", result);
+
+          return modelArticle.findOneAndUpdate({
+            "_id": req.params.artId
+          }, 
+          {
+            $pull: {
+              "comments": req.params.commentId
+            }
+          }, 
+          {
+            new: true,
+            safe: true
+          }).exec(function (err, doc) {
+              // Log any errors
+              if (err) {
+                console.log(err);
+              } else {
+                // Or send the document to the browser
+                console.log("After DOc..", doc);
+                res.redirect('back');
+              }
+            });
+        }
+    });
+  });
+
 
 }

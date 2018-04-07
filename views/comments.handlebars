@@ -1,4 +1,4 @@
-
+{{result}}
 <div class="container">
   <div class="row">
     <div class="col-md-12">
@@ -28,9 +28,12 @@
 
 {{#each result.comments as |comment|}}
  <div class="row row-comment">
-    <div class="col-md-12">
+    <div class="col-md-11">
          Title : {{comment.title}} <br>
          Comment : {{comment.content}}
+     </div>
+     <div class="col-md-1">
+        <a href="/comments/delete/{{../result._id}}/{{comment._id}}"><i class="fa fa-2x fa-trash"></i></a>
      </div> 
   </div>
  {{/each}}
