@@ -26,7 +26,8 @@ module.exports = function(app) {
 			      	modelArticle.create(result)
 			        	.then(function(dbArticle) {
 			          console.log("Created Articles", dbArticle);
-			          res.send('Successful: scrape completed for ' + (counter) + 'articles');
+			          // res.send('Successful: scrape completed for ' + (counter) + 'articles');
+			          res.redirect('back');
 			        }).catch(function(err) {
 			           res.status('Error', err);
 			        });
