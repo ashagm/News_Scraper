@@ -12,16 +12,17 @@ module.exports = function(app) {
         } else {
           console.log("Comment model created ....", commentDoc)
           // Use the article id to find and update it's comment
-          modelArticle.findOneAndUpdate({
-            _id: req.params.id
+          return modelArticle.findOneAndUpdate({
+            "_id": req.params.id
           }, 
           {
             $push: {
-              comment: commentDoc._id
+              "comments": commentDoc._id
             }
           }, 
           {
-            new: true
+            new: true,
+            safe: true
           }).exec(function (err, doc) {
               // Log any errors
               if (err) {
