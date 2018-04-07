@@ -1,0 +1,26 @@
+ {{result}}
+ <div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Enter Your Comments<h1>
+        <a href="{{result.link}}"><h2>{{result.headline}}</h2></a>
+    </div>
+  </div>
+
+
+   <div class="row">
+    <div class="col-md-12">
+     <form method="POST" action="/articles/{{result._id}}">
+        <div class="form-group row">
+          <label for="name" class="col-form-label">Title</label>
+          <input class="form-control" type="text" name="title" id="title" required>
+        </div>
+        <div class="form-group row">
+          <label for="body">Message</label>
+          <textarea class="form-control" id="content" name="content" rows="3" required></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </form>
+     </div> 
+  </div>
+ </div>

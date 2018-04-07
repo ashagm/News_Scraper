@@ -59,6 +59,7 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 //routes
 require("./controllers/scraper-controller.js")(app);
 require("./controllers/article-controller.js")(app);
+require("./controllers/comment-controller.js")(app);
 
 
 app.get("/", function(req,res){

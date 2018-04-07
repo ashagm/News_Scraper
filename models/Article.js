@@ -23,7 +23,12 @@ var ArticleSchema = new Schema({
   byline: {
     type: String,
     required: false
-  }
+  },
+  // This only saves one comments's ObjectId, ref refers to the Comment model
+  comments: [{
+    type: Schema.Types.ObjectId,
+    ref: "Comment"
+  }]
 });
 
 // This creates our model from the above schema, using mongoose's model method
