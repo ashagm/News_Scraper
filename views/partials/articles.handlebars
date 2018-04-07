@@ -1,0 +1,9 @@
+{{#each articles as |article|}}
+	<div class="row row-headline" >
+		<div class="col-md-12">
+			<h2><a href="{{article.link}}" target="_blank" >{{article.headline}}</a><h2>
+			<h5>{{article.summary}}<h5>
+			<p>{{article.byline}}</p>
+		</div>
+	</div>
+{{/each}}

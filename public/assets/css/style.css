@@ -1,0 +1,22 @@
+body{
+	background: url("../images/bg-1.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.jumbotron{
+	background-color: #23bbad;
+	color: #e7e7e7;
+	padding: 10px;
+	margin: 30px 50px;
+	opacity: 0.7;
+}
+
+.row-headline{
+	background-color: #e7e7e7;
+	color: #23bbad;
+	opacity: 0.6;
+	padding: 10px;
+	border: 2px solid #000;
+	margin: 5px 0px;
+}
